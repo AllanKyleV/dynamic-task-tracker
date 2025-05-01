@@ -1,0 +1,66 @@
+:root {
+    --main-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 500;
+    font-family: var(--main-font);
+    border: none;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+#task-app {
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3.5px solid black;
+    width: 50%;
+    gap: 20px;
+    padding: 30px 30px;
+    margin: 50px;
+}
+
+#task-form, #task-filters {
+    border: 3.5px solid black;
+    height: 40px;
+    width: 100%;
+    display: flex;
+}
+
+#task-input {
+    border: none;
+    flex: 2;
+    padding-inline-start: 10px;
+}
+
+#add-task-btn {
+    border-left: 3.5px solid black;
+    flex: 1;
+}
+
+#task-filters :nth-child(2) {
+    border-inline: 3.5px solid black;
+}
+
+.filter-btn {
+    flex: 1;
+}
+
+
