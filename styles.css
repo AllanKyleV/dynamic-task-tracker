@@ -20,6 +20,10 @@ button {
     border: none;
 }
 
+button:hover {
+    background-color: lightgray;
+}
+
 h1 {
     font-size: 1.8em;
 }
@@ -61,4 +65,27 @@ h1 {
 
 .filter-btn {
     flex: 1;
+}
+
+.btn-done, .btn-remove {
+    background-color: transparent;
+    padding: 8px;
+    width: 80px;
+    border: 3px solid black;
+    border-radius: 3px;
+    margin: 0 10px;
+}
+
+#task-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.new-task {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    padding: 10px;
+    border: 3px solid black;
 }

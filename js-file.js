@@ -4,14 +4,15 @@ const addTaskBtn = document.querySelector('#add-task-btn');
 const taskList = document.querySelector('#task-list');
 
 // Done-button function
-function doneBtn(newtask) {
+function doneBtn(tasktext) {
     const btn = document.createElement('button');
     btn.textContent = 'Done';
+    btn.classList.add('btn-done');
 
     btn.addEventListener('click', () => {
         // Mark task visually as completed
-        newtask.style.textDecoration = 'line-through';
-        newtask.style.color = 'gray';
+        tasktext.style.textDecoration = 'line-through';
+        tasktext.style.color = 'gray';
     });
 
     return btn;
@@ -21,6 +22,7 @@ function doneBtn(newtask) {
 function removeBtn(taskList, newtask) {
     const btn = document.createElement('button');
     btn.textContent = 'Remove';
+    btn.classList.add('btn-remove');
 
     btn.addEventListener('click', () => {
         // Remove the task from the list
@@ -38,12 +40,17 @@ addTaskBtn.addEventListener('click', (event) => {
     if (value !== '') {
         // Create new task item
         const newtask = document.createElement('li');
-        newtask.textContent = value;
         taskList.appendChild(newtask); // Add to task list
+        newtask.classList.add('new-task');
         input.value = ''; // Clear input
 
+        // Creat a span for task test
+        const tasktext = document.createElement('span');
+        tasktext.textContent = value;
+        newtask.appendChild(tasktext);
+
         // Add "Done" and "Remove" buttons to the task
-        newtask.appendChild(doneBtn(newtask));
+        newtask.appendChild(doneBtn(tasktext));
         newtask.appendChild(removeBtn(taskList, newtask));
     }
 });
